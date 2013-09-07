@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 SharedPreferences.Editor edit = getPreferences().edit();
                 edit.putBoolean("active",isChecked);
+                edit.commit();
             }
         });
 
