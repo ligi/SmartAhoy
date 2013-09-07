@@ -49,7 +49,7 @@ public class SmartAhoyRegistrationInformation extends RegistrationInformation {
 
         ContentValues values = new ContentValues();
         values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY,
-                MainActivity.class.getName());
+                SmartAhoyPreferenceActivity.class.getName());
         values.put(Registration.ExtensionColumns.CONFIGURATION_TEXT, configurationText);
         values.put(Registration.ExtensionColumns.EXTENSION_ICON_URI, extensionIcon);
         values.put(Registration.ExtensionColumns.EXTENSION_48PX_ICON_URI, extensionIcon48);

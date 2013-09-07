@@ -1,6 +1,5 @@
 package org.cbase.smartahoy;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -8,47 +7,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
+import android.preference.PreferenceScreen;
 import android.widget.Toast;
 
 import com.sonyericsson.extras.liveware.extension.util.notification.NotificationUtil;
 
-public class MainActivity extends Activity {
+public class SmartAhoyPreferenceActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.settings);
-
-        CheckBox activeCheckBox = (CheckBox) findViewById(R.id.activeCheckBox);
-
-        activeCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                SharedPreferences.Editor edit = getPreferences().edit();
-                edit.putBoolean("active", isChecked);
-                edit.commit();
-
-                if (isChecked) {
-                    startSampleExtensionService();
-                } else {
-                    stopSampleExtensionService();
-                }
-
-            }
-        });
-
-        activeCheckBox.setChecked(getPreferences().getBoolean("active", false));
-
-        findViewById(R.id.clearNotifications).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createClearDialog().show();
-            }
-        });
+        setPreferenceScreen(createPreferenceHierarchy());
     }
 
     public SharedPreferences getPreferences() {
@@ -110,21 +83,61 @@ public class MainActivity extends Activity {
         @Override
         protected Integer doInBackground(Void... params) {
             int nbrDeleted = 0;
-            nbrDeleted = NotificationUtil.deleteAllEvents(MainActivity.this);
+            nbrDeleted = NotificationUtil.deleteAllEvents(SmartAhoyPreferenceActivity.this);
             return nbrDeleted;
         }
 
         @Override
         protected void onPostExecute(Integer id) {
             if (id != NotificationUtil.INVALID_ID) {
-                Toast.makeText(MainActivity.this,"clear done",
+                Toast.makeText(SmartAhoyPreferenceActivity.this, "clear done",
                         Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(MainActivity.this, "problem clearing",
+                Toast.makeText(SmartAhoyPreferenceActivity.this, "problem clearing",
                         Toast.LENGTH_SHORT).show();
             }
         }
 
     }
 
+    private PreferenceScreen createPreferenceHierarchy() {
+        @SuppressWarnings("deprecation")
+        PreferenceScreen root = getPreferenceManager().createPreferenceScreen(this);
+
+        CheckBoxPreference isActiveCheckBox = new CheckBoxPreference(this);
+
+        isActiveCheckBox.setKey("active");
+        isActiveCheckBox.setTitle("active");
+        isActiveCheckBox.setSummary("should we show Ahoy notifications!");
+        isActiveCheckBox.setDefaultValue(false);
+
+        Preference clearNotificationsPreference = new Preference(this);
+        clearNotificationsPreference.setTitle("clear");
+        clearNotificationsPreference.setSummary("removes all notifications");
+        clearNotificationsPreference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                createClearDialog().show();
+                return false;
+            }
+        });
+
+        isActiveCheckBox.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if ((Boolean)newValue) {
+                    startSampleExtensionService();
+                } else {
+                    stopSampleExtensionService();
+                }
+                return true;
+            }
+        });
+
+
+        root.addPreference(isActiveCheckBox);
+        root.addPreference(clearNotificationsPreference);
+
+        return root;
+    }
 }
