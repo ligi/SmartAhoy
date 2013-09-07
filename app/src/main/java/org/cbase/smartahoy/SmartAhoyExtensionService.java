@@ -213,7 +213,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
     }
 
     private void startBroadcastReceiver() {
-        System.out.println("XXXXXX Starting broadcast receiver");
+        Log.d(LOG_TAG, "Registering Ahoy broadcast receiver");
         mReceiver = new AhoyBroadcastReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(AHOY_UPDATE_INTENT);
@@ -222,13 +222,13 @@ public class SmartAhoyExtensionService extends ExtensionService {
 
     private void stopBroadcastReceiver() {
         if (mReceiver != null) {
-            System.out.println("XXXXXX Stopping broadcast receiver");
+            Log.d(LOG_TAG, "Unregistering Ahoy broadcast receiver");
             unregisterReceiver(mReceiver);
         }
     }
 
     private void createNotification(String message) {
-        System.out.println("XXXXXX Creating notification");
+        Log.d(LOG_TAG, "Creating notification for new Ahoy message: " + message);
 
         long time = System.currentTimeMillis();
         long sourceId = NotificationUtil
