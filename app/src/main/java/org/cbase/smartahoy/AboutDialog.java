@@ -15,5 +15,7 @@ public class AboutDialog extends Activity {
         TextView aboutText=(TextView)findViewById(R.id.aboutText);
 
         aboutText.setText(Html.fromHtml("SmartAhoy! v0.1 is the app to show the notifications from <a href='https://github.com/nhcham/Ahoy'>Ahoy!</a> on a Sony SmartWatch\n by <a href='http://github.com/cketti'>cketti</a> and <a href='http://ligi.de'>ligi</a> the Icon was designed by Jana Schramm"));
+                "" +
+                "\n you can find the sourcecode <a href='https://github.com/ligi/SmartAhoy'>here</a>"));
     }
 }
