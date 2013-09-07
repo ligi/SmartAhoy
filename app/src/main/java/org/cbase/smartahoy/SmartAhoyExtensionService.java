@@ -63,6 +63,10 @@ import java.util.Random;
  * into the notification database.
  */
 public class SmartAhoyExtensionService extends ExtensionService {
+
+
+    private Long lastFirstSeen =0L;
+
     private static final String AHOY_UPDATE_INTENT = "AhoyActivityUpdate";
 
     /**
@@ -348,7 +352,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
         }
     }
 
-    private void createNotification(int numMessages) {
+    private void createNotification(String message) {
         System.out.println("XXXXXX Creating notification");
 
         long time = System.currentTimeMillis();
@@ -363,8 +367,8 @@ public class SmartAhoyExtensionService extends ExtensionService {
 
         ContentValues eventValues = new ContentValues();
         eventValues.put(Notification.EventColumns.EVENT_READ_STATUS, false);
-        eventValues.put(Notification.EventColumns.DISPLAY_NAME, "Ahoy");
-        eventValues.put(Notification.EventColumns.MESSAGE, numMessages + " messages");
+        eventValues.put(Notification.EventColumns.DISPLAY_NAME, message);
+        eventValues.put(Notification.EventColumns.MESSAGE, message);
         eventValues.put(Notification.EventColumns.PERSONAL, 1);
         eventValues.put(Notification.EventColumns.PROFILE_IMAGE_URI, profileImage);
         eventValues.put(Notification.EventColumns.PUBLISHED_TIME, time);
@@ -381,19 +385,34 @@ public class SmartAhoyExtensionService extends ExtensionService {
         }
     }
 
+
+
     class AhoyBroadcastReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            System.out.println("XXXXXX Broadcast received.");
             HashMap<String, HashMap<String, Long>> messageHash =
                     (HashMap<String, HashMap<String, Long>>) intent.getSerializableExtra("messageHash");
 
+
+
             if (messageHash != null) {
                 int messageCount = messageHash.size();
-                if (mOldMessageCount != messageCount) {
-                    createNotification(messageCount);
+                Long newLastFirstSeen=lastFirstSeen;
+
+                for ( String msg : messageHash.keySet()) {
+                    HashMap<String, Long> messageMeta = messageHash.get(msg);
+                    Long firstSeen = messageMeta.get("firstSeen");
+
+                    if (firstSeen>lastFirstSeen) {
+                        newLastFirstSeen=Math.max(firstSeen,newLastFirstSeen);
+                        createNotification(msg);
+                    }
+
                 }
+
+                lastFirstSeen=newLastFirstSeen;
+
                 mOldMessageCount = messageCount;
             }
         }
