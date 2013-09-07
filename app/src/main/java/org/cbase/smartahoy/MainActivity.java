@@ -1,6 +1,7 @@
 package org.cbase.smartahoy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -22,6 +23,13 @@ public class MainActivity extends Activity {
                 SharedPreferences.Editor edit = getPreferences().edit();
                 edit.putBoolean("active", isChecked);
                 edit.commit();
+
+                if (isChecked) {
+                    startSampleExtensionService();
+                } else {
+                    stopSampleExtensionService();
+                }
+
             }
         });
 
@@ -32,5 +40,25 @@ public class MainActivity extends Activity {
     public SharedPreferences getPreferences() {
         return PreferenceManager.getDefaultSharedPreferences(this);
     }
+
+
+    /**
+     * Activate event generation
+     */
+    private void startSampleExtensionService() {
+        Intent serviceIntent = new Intent(this, SmartAhoyExtensionService.class);
+        serviceIntent.setAction(SmartAhoyExtensionService.INTENT_ACTION_START);
+        startService(serviceIntent);
+    }
+
+    /**
+     * Cancel event generation
+     */
+    private void stopSampleExtensionService() {
+        Intent serviceIntent = new Intent(this, SmartAhoyExtensionService.class);
+        serviceIntent.setAction(SmartAhoyExtensionService.INTENT_ACTION_STOP);
+        startService(serviceIntent);
+    }
+
 
 }
