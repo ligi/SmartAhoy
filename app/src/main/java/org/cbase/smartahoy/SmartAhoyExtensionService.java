@@ -34,8 +34,11 @@ package org.cbase.smartahoy;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -52,6 +55,7 @@ import com.sonyericsson.extras.liveware.extension.util.notification.Notification
 import com.sonyericsson.extras.liveware.extension.util.registration.DeviceInfoHelper;
 import com.sonyericsson.extras.liveware.extension.util.registration.RegistrationInformation;
 
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -59,6 +63,7 @@ import java.util.Random;
  * into the notification database.
  */
 public class SmartAhoyExtensionService extends ExtensionService {
+    private static final String AHOY_UPDATE_INTENT = "AhoyActivityUpdate";
 
     /**
      * Extensions specific id for the source
@@ -108,6 +113,8 @@ public class SmartAhoyExtensionService extends ExtensionService {
      * Add data, handled in onStartCommand()
      */
     private static final String INTENT_ACTION_ADD = "com.sonymobile.smartconnect.extension.notificationsample.action.add";
+    private BroadcastReceiver mReceiver;
+    private int mOldMessageCount;
 
     public SmartAhoyExtensionService() {
         super(EXTENSION_KEY);
@@ -301,7 +308,10 @@ public class SmartAhoyExtensionService extends ExtensionService {
                     .getDefaultSharedPreferences(this);
             boolean isActive = prefs.getBoolean("active", true);
             if (isActive) {
-                startAddData();
+//                startAddData();
+                startBroadcastReceiver();
+            } else {
+                stopBroadcastReceiver();
             }
         }
     }
@@ -319,5 +329,71 @@ public class SmartAhoyExtensionService extends ExtensionService {
     @Override
     protected boolean keepRunningWhenConnected() {
         return false;
+    }
+
+    private void startBroadcastReceiver() {
+        System.out.println("XXXXXX Starting broadcast receiver");
+        mReceiver = new AhoyBroadcastReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(AHOY_UPDATE_INTENT);
+        registerReceiver(mReceiver, filter);
+    }
+
+    private void stopBroadcastReceiver() {
+        if (mReceiver != null) {
+            System.out.println("XXXXXX Stopping broadcast receiver");
+            unregisterReceiver(mReceiver);
+        }
+    }
+
+    private void createNotification(int numMessages) {
+        System.out.println("XXXXXX Creating notification");
+
+        long time = System.currentTimeMillis();
+        long sourceId = NotificationUtil
+                .getSourceId(this, EXTENSION_SPECIFIC_ID);
+        if (sourceId == NotificationUtil.INVALID_ID) {
+            Log.e(LOG_TAG, "Failed to insert data");
+            return;
+        }
+        String profileImage = ExtensionUtils.getUriString(this,
+                R.drawable.ic_launcher);
+
+        ContentValues eventValues = new ContentValues();
+        eventValues.put(Notification.EventColumns.EVENT_READ_STATUS, false);
+        eventValues.put(Notification.EventColumns.DISPLAY_NAME, "Ahoy");
+        eventValues.put(Notification.EventColumns.MESSAGE, numMessages + " messages");
+        eventValues.put(Notification.EventColumns.PERSONAL, 1);
+        eventValues.put(Notification.EventColumns.PROFILE_IMAGE_URI, profileImage);
+        eventValues.put(Notification.EventColumns.PUBLISHED_TIME, time);
+        eventValues.put(Notification.EventColumns.SOURCE_ID, sourceId);
+
+        try {
+            getContentResolver().insert(Notification.Event.URI, eventValues);
+        } catch (IllegalArgumentException e) {
+            Log.e(LOG_TAG, "Failed to insert event", e);
+        } catch (SecurityException e) {
+            Log.e(LOG_TAG, "Failed to insert event, is Live Ware Manager installed?", e);
+        } catch (SQLException e) {
+            Log.e(LOG_TAG, "Failed to insert event", e);
+        }
+    }
+
+    class AhoyBroadcastReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            System.out.println("XXXXXX Broadcast received.");
+            HashMap<String, HashMap<String, Long>> messageHash =
+                    (HashMap<String, HashMap<String, Long>>) intent.getSerializableExtra("messageHash");
+
+            if (messageHash != null) {
+                int messageCount = messageHash.size();
+                if (mOldMessageCount != messageCount) {
+                    createNotification(messageCount);
+                }
+                mOldMessageCount = messageCount;
+            }
+        }
     }
 }
