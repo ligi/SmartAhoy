@@ -58,6 +58,27 @@ public class SmartAhoyExtensionService extends ExtensionService {
      * Add data, handled in onStartCommand()
      */
     private static final String INTENT_ACTION_ADD = "com.sonymobile.smartconnect.extension.notificationsample.action.add";
+
+    /**
+     * Activate event generation
+     */
+    public static void startAhoyExtensionService(Context context) {
+        Intent serviceIntent = new Intent(context, SmartAhoyExtensionService.class);
+        serviceIntent.setAction(SmartAhoyExtensionService.INTENT_ACTION_START);
+        context.startService(serviceIntent);
+    }
+
+    /**
+     * Cancel event generation
+     */
+    public static void stopAhoyExtensionService(Context context) {
+        Intent serviceIntent = new Intent(context, SmartAhoyExtensionService.class);
+        serviceIntent.setAction(SmartAhoyExtensionService.INTENT_ACTION_STOP);
+        context.startService(serviceIntent);
+    }
+
+
+
     private BroadcastReceiver mReceiver;
 
     public SmartAhoyExtensionService() {
@@ -190,9 +211,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
                     .getDefaultSharedPreferences(this);
             boolean isActive = prefs.getBoolean("active", true);
             if (isActive) {
-                startBroadcastReceiver();
-            } else {
-                stopBroadcastReceiver();
+                startAhoyExtensionService(this);
             }
         }
     }
