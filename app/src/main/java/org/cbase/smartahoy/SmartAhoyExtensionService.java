@@ -23,10 +23,6 @@ import com.sonyericsson.extras.liveware.extension.util.registration.Registration
 import java.util.HashMap;
 
 public class SmartAhoyExtensionService extends ExtensionService {
-
-
-    private Long lastFirstSeen =0L;
-
     private static final String AHOY_UPDATE_INTENT = "AhoyActivityUpdate";
 
     /**
@@ -78,8 +74,9 @@ public class SmartAhoyExtensionService extends ExtensionService {
     }
 
 
+    private BroadcastReceiver receiver;
+    private Long lastFirstSeen = 0L;
 
-    private BroadcastReceiver mReceiver;
 
     public SmartAhoyExtensionService() {
         super(EXTENSION_KEY);
@@ -233,16 +230,16 @@ public class SmartAhoyExtensionService extends ExtensionService {
 
     private void startBroadcastReceiver() {
         Log.d(LOG_TAG, "Registering Ahoy broadcast receiver");
-        mReceiver = new AhoyBroadcastReceiver();
+        receiver = new AhoyBroadcastReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(AHOY_UPDATE_INTENT);
-        registerReceiver(mReceiver, filter);
+        registerReceiver(receiver, filter);
     }
 
     private void stopBroadcastReceiver() {
-        if (mReceiver != null) {
+        if (receiver != null) {
             Log.d(LOG_TAG, "Unregistering Ahoy broadcast receiver");
-            unregisterReceiver(mReceiver);
+            unregisterReceiver(receiver);
         }
     }
 
@@ -280,7 +277,6 @@ public class SmartAhoyExtensionService extends ExtensionService {
     }
 
 
-
     class AhoyBroadcastReceiver extends BroadcastReceiver {
 
         @Override
@@ -288,23 +284,20 @@ public class SmartAhoyExtensionService extends ExtensionService {
             HashMap<String, HashMap<String, Long>> messageHash =
                     (HashMap<String, HashMap<String, Long>>) intent.getSerializableExtra("messageHash");
 
-
-
             if (messageHash != null) {
-                Long newLastFirstSeen=lastFirstSeen;
+                Long newLastFirstSeen = lastFirstSeen;
 
-                for ( String msg : messageHash.keySet()) {
+                for (String msg : messageHash.keySet()) {
                     HashMap<String, Long> messageMeta = messageHash.get(msg);
                     Long firstSeen = messageMeta.get("firstSeen");
 
-                    if (firstSeen>lastFirstSeen) {
-                        newLastFirstSeen=Math.max(firstSeen,newLastFirstSeen);
+                    if (firstSeen > lastFirstSeen) {
+                        newLastFirstSeen = Math.max(firstSeen, newLastFirstSeen);
                         createNotification(msg);
                     }
-
                 }
 
-                lastFirstSeen=newLastFirstSeen;
+                lastFirstSeen = newLastFirstSeen;
             }
         }
     }
