@@ -42,7 +42,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
     /**
      * Log tag
      */
-    public static final String LOG_TAG = "SampleNotificationExtension";
+    public static final String LOG_TAG = "SmartAhoy";
 
     /**
      * Starts periodic insert of data handled in onStartCommand()
