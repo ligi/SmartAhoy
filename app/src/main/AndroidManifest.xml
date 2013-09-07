@@ -15,7 +15,7 @@
         android:smallScreens="true" />
 
     <application
-        android:label="test"
+        android:label="SmartAhoy"
         android:allowBackup="true">
 
         <activity android:name=".SmartAhoyPreferenceActivity"
