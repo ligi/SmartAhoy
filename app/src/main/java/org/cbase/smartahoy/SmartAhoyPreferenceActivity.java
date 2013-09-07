@@ -111,6 +111,21 @@ public class SmartAhoyPreferenceActivity extends PreferenceActivity {
         isActiveCheckBox.setSummary("should we show Ahoy notifications!");
         isActiveCheckBox.setDefaultValue(false);
 
+        Preference about = new Preference(this);
+        about.setTitle("about");
+        about.setSummary("WTF is this all about?");
+        about.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+
+                Intent intent = new Intent(SmartAhoyPreferenceActivity.this, AboutDialog.class);
+                SmartAhoyPreferenceActivity.this.startActivity(intent);
+
+                return false;
+            }
+        });
+
         Preference clearNotificationsPreference = new Preference(this);
         clearNotificationsPreference.setTitle("clear");
         clearNotificationsPreference.setSummary("removes all notifications");
@@ -137,6 +152,7 @@ public class SmartAhoyPreferenceActivity extends PreferenceActivity {
 
         root.addPreference(isActiveCheckBox);
         root.addPreference(clearNotificationsPreference);
+        root.addPreference(about);
 
         return root;
     }

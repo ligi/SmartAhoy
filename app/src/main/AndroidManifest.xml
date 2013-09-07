@@ -6,7 +6,7 @@
     <uses-permission android:name="com.sonyericsson.extras.liveware.aef.EXTENSION_PERMISSION"></uses-permission>
 
     <uses-sdk
-        android:minSdkVersion="7"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
     <supports-screens
         android:anyDensity="true"
@@ -15,9 +15,11 @@
         android:smallScreens="true" />
 
     <application
-        android:label="SmartAhoy"
+        android:label="SmartAhoy!"
         android:allowBackup="true">
 
+        <activity android:name=".AboutDialog"
+            android:theme="@android:style/Theme.Holo.Dialog" />
         <activity android:name=".SmartAhoyPreferenceActivity"
                   android:icon="@drawable/ic_launcher"
                   android:exported="true"/>
