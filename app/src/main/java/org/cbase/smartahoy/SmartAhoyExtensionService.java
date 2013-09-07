@@ -78,14 +78,14 @@ public class SmartAhoyExtensionService extends ExtensionService {
     /**
      * Event names
      */
-    private static final String[] NAMES = new String[] {
+    private static final String[] NAMES = new String[]{
             "Name A", "Name B", "Name C", "Name D", "Name D", "Name E",
     };
 
     /**
      * Event messages
      */
-    private static final String[] MESSAGE = new String[] {
+    private static final String[] MESSAGE = new String[]{
             "Message 1", "Message 2", "Message 3", "Message 4", "Message 5", "Message 6",
     };
 
@@ -126,7 +126,6 @@ public class SmartAhoyExtensionService extends ExtensionService {
 
     /**
      * {@inheritDoc}
-     *
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -300,7 +299,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
         if (result) {
             SharedPreferences prefs = PreferenceManager
                     .getDefaultSharedPreferences(this);
-            boolean isActive = prefs.getBoolean("active",true);
+            boolean isActive = prefs.getBoolean("active", true);
             if (isActive) {
                 startAddData();
             }
