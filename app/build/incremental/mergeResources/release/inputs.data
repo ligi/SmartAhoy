@@ -1,0 +1,15 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1378554460000 2601 f551dd51084866786145543051cfa85a1371b7ac /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values/values.xml
+1378554460000 2846 652c7b52f698143f1cb35dd88719f8cbedd1c3f8 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_ok_icn.png
+1378554460000 1395 3ea827eec6f5c9a3c200feed48e92824520b1c43 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/widget_frame.png
+1378554460000 570 de36a649ad1e46184746d9416a32a9290c0ec917 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/badge_counter.png
+1378554460000 2587 e923f878ec606e07aea789c47f32edabf7e0d145 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/layout/smart_watch_notification_widget.xml
+1378554460000 265 3693e2e78d6e7517d20bd3f6129e87783998a1c1 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/text_bg.png
+1378554460000 462 f6f17a8e0909b224c13112d809b3a3d6474a6da9 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values-zh-rTW/values.xml
+1378554460000 2457 0fe0b3a16bbc19f407359562e25b80332677e60e /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/layout/smart_watch_widget.xml
+1378553067000 5057 23730fd0d5e720d1f719be1afc8c48fa7305da6c /home/ligi/git/SmartAhoy/app/src/main/res/drawable/ic_launcher.png
+1378554460000 2822 6dc0429e2e7d27472e0b8db9a96330638902e373 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_focus_xs_icn.png
+1378554460000 227 ced779d6ccd1ebf79799308c0c7fd02533286ced /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values-ja/values.xml
+1378554460000 2849 b00e2af1f1d94af0fa831060026fa1848907ddc8 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_cancel_icn.png

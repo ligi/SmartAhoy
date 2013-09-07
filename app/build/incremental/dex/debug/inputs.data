@@ -1,0 +1,26 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1378555054000 9224 67a945a4f9685c360f889e95f1e171d99c5ee573 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/SmartAhoyExtensionService.class
+1378554461000 1652 8674d3ef05f8ec2157a216f132492ab2f4aa516b /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$dimen.class
+1378554460000 33532 79f40c5970f109b68cbfa3657768b82844ca32f0 /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/libs/SmartExtensionAPI-0.1.jar
+1378548119000 37432 43317e96181e5f7aa719737ee05c0962c71c7dea /home/ligi/.gradle/caches/artifacts-24/filestore/org.ligi/AndroidHelper/0.21/jar/43317e96181e5f7aa719737ee05c0962c71c7dea/AndroidHelper-0.21.jar
+1378554461000 347 70bd0a39d4b74dad7eb9ca8095a38242a0612e52 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/BuildConfig.class
+1375021508000 563264 44ec51e9d395a47aab135e5e1b556c0007442156 /home/ligi/bin/android-sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar
+1378554461000 466 68fbd0e2f6ea4d7f2c2766886575e38a378a18e9 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$layout.class
+1378554461000 738 720e67c89ac3fc95e8f8900ac7491e0f6b08dc5f /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R.class
+1378554461000 974 8a409ee3352fa59ec6b88773f7b1565638328d63 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$id.class
+1376014122000 11482 6cdbf04ba83c7958cbf35c3b78a861f198cf684b /home/ligi/.gradle/caches/artifacts-24/filestore/org.ligi/tracedroid/1.1/jar/6cdbf04ba83c7958cbf35c3b78a861f198cf684b/tracedroid-1.1.jar
+1378554461000 1058 17e6e865f8bc1aefdae901fd78b03dba3a5e4387 /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R$id.class
+1378554461000 699 e78a572e0e7462f9e9317099a7fe8a6df68baa3a /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R$drawable.class
+1378554461000 550 c86cc4195f304a8237a7a113215cae087420d41f /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R$layout.class
+1378554461000 768 aff57d2f1219e96cf61c50c776b61778621627f3 /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R$color.class
+1378554461000 343 ee84d1ed5aab871158b73ab3892006c28b59861e /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$attr.class
+1378554461000 1736 cd0c411776d7fe1bfe94c0fd0d0e8f427bcef221 /home/ligi/git/SmartAhoy/app/build/classes/debug/com/sonyericsson/extras/liveware/extension/util/R$dimen.class
+1378554461000 684 4c98c16e96f0b5dab48f992314be13dfe443131e /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$color.class
+1378555710000 1168 57f785770cb249abc8cfeda94fb7e9546fb8af84 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/ExtensionReceiver.class
+1378554686000 726 732ee2b9fb904b420e9a7ea5af186c4de5b80772 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/MainActivity.class
+1378554460000 89565 8cdd194d1adec6f107fa3708b30bff13b9fc096c /home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/classes.jar
+1378554461000 650 4412defe6893dd9959b98003b5f1e85a89aa7ecb /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R$drawable.class
+1378554461000 589 633b1a7f2e2b5228b7c55bf87fc74b80c7a8d767 /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/R.class
+1378554461000 2262 7c131825cd1504eaa20a2d9ec8d898fbfdc9620a /home/ligi/git/SmartAhoy/app/build/classes/debug/org/cbase/smartahoy/SmartAhoyRegistrationInformation.class

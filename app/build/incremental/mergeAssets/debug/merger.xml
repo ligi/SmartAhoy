@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="SmartAhoySmartExtensionUtils01.aar" >
+        <source path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/ligi/git/SmartAhoy/app/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/home/ligi/git/SmartAhoy/app/src/debug/assets" />
+    </dataSet>
+
+</merger>

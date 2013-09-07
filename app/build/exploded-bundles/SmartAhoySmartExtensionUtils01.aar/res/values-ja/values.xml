@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/ligi/git/SmartAhoy/SmartExtensionUtils/src/main/res/values-ja/headset_pro.xml -->
+    <dimen name="headset_pro_text_size">16px</dimen>
+
+</resources>

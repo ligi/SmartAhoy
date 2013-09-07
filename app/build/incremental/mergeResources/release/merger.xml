@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="SmartAhoySmartExtensionUtils01.aar" >
+        <source path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res" >
+            <file
+                name="smart_watch_notification_widget"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/layout/smart_watch_notification_widget.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="smart_watch_widget"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/layout/smart_watch_widget.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values-zh-rTW/values.xml"
+                qualifiers="zh-rTW" >
+                <dimen name="smart_watch_text_size_normal" >16px
+                </dimen>
+                <dimen name="smart_watch_text_size_small" >14px
+                </dimen>
+                <dimen name="headset_pro_text_size" >16px
+                </dimen>
+            </file>
+            <file
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values-ja/values.xml"
+                qualifiers="ja" >
+                <dimen name="headset_pro_text_size" >16px
+                </dimen>
+            </file>
+            <file
+                name="headset_pro_cancel_icn"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_cancel_icn.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="badge_counter"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/badge_counter.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="headset_pro_ok_icn"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_ok_icn.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="widget_frame"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/widget_frame.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="headset_pro_focus_xs_icn"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/headset_pro_focus_xs_icn.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="text_bg"
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/drawable/text_bg.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                path="/home/ligi/git/SmartAhoy/app/build/exploded-bundles/SmartAhoySmartExtensionUtils01.aar/res/values/values.xml"
+                qualifiers="" >
+                <color name="smart_watch_2_text_color_white" >#ffffffff
+                </color>
+
+                <dimen name="smart_watch_text_size_widget_text" >@dimen/smart_watch_text_size_small
+                </dimen>
+                <dimen name="smart_watch_widget_text_background_height" >60px
+                </dimen>
+
+                <color name="smart_watch_2_text_color_orange" >#fff0832d
+                </color>
+                <color name="smart_watch_text_color_white" >#ffffffff
+                </color>
+                <color name="smart_watch_text_color_grey" >#ffe6e6e6
+                </color>
+
+                <dimen name="smart_watch_text_size_widget_badge" >14px
+                </dimen>
+
+                <color name="smart_watch_2_text_color_grey" >#ffe6e6e6
+                </color>
+                <color name="smart_watch_text_color_orange" >#fff0832d
+                </color>
+
+                <dimen name="smart_watch_widget_width_outer" >128px
+                </dimen>
+                <dimen name="smart_watch_widget_height_inner" >92px
+                </dimen>
+                <dimen name="smart_watch_2_text_size_large" >20px
+                </dimen>
+                <dimen name="headset_pro_control_width" >128px
+                </dimen>
+                <dimen name="headset_pro_control_height" >36px
+                </dimen>
+                <dimen name="smart_watch_2_control_height" >176px
+                </dimen>
+                <dimen name="smart_watch_2_text_size_medium" >15px
+                </dimen>
+                <dimen name="smart_watch_text_size_widget_time" >@dimen/smart_watch_text_size_small
+                </dimen>
+                <dimen name="smart_watch_widget_text_background_width" >@dimen/smart_watch_widget_width_inner
+                </dimen>
+                <dimen name="smart_watch_2_widget_width" >204px
+                </dimen>
+                <dimen name="smart_watch_text_size_widget_name" >@dimen/smart_watch_text_size_normal
+                </dimen>
+                <dimen name="smart_watch_widget_width_inner" >92px
+                </dimen>
+                <dimen name="headset_pro_text_size" >14px
+                </dimen>
+                <dimen name="smart_watch_text_size_small" >12px
+                </dimen>
+                <dimen name="smart_watch_2_text_size_small" >13px
+                </dimen>
+                <dimen name="smart_watch_2_widget_height" >60px
+                </dimen>
+                <dimen name="smart_watch_control_height" >128px
+                </dimen>
+                <dimen name="smart_watch_2_control_width" >220px
+                </dimen>
+                <dimen name="smart_watch_widget_height_outer" >110px
+                </dimen>
+                <dimen name="smart_watch_text_size_normal" >14px
+                </dimen>
+                <dimen name="smart_watch_control_width" >128px
+                </dimen>
+            </file>
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/home/ligi/git/SmartAhoy/app/src/main/res" >
+            <file
+                name="ic_launcher"
+                path="/home/ligi/git/SmartAhoy/app/src/main/res/drawable/ic_launcher.png"
+                qualifiers=""
+                type="drawable" />
+        </source>
+        <source path="/home/ligi/git/SmartAhoy/app/build/res/rs/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/home/ligi/git/SmartAhoy/app/src/release/res" />
+    </dataSet>
+
+</merger>

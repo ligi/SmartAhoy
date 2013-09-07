@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+    }
+}
+
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+    maven {
+        url project.hasProperty('ligisMavenUrl') ? ligisMavenUrl : "https://raw.github.com/ligi/ligis-mvn-repo/master";
+    }}
+
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "18.0.1"
+
+    dependencies {
+        compile project(':SmartExtensionUtils')
+        compile 'org.ligi:AndroidHelper:0.21'
+        compile 'org.ligi:tracedroid:1.1'
+        compile 'com.android.support:support-v4:18.0.0'
+    }
+}

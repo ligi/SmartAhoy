@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/ligi/git/SmartAhoy/SmartExtensionUtils/src/main/res/values-zh-rTW/headset_pro.xml -->
+    <dimen name="headset_pro_text_size">16px</dimen>
+    <!-- From: file:/home/ligi/git/SmartAhoy/SmartExtensionUtils/src/main/res/values-zh-rTW/smart_watch.xml -->
+    <dimen name="smart_watch_text_size_normal">16px</dimen>
+    <dimen name="smart_watch_text_size_small">14px</dimen>
+
+</resources>
