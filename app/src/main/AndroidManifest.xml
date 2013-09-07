@@ -19,12 +19,8 @@
         android:allowBackup="true">
 
         <activity android:name=".SmartAhoyPreferenceActivity"
-            android:icon="@drawable/ic_launcher">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                  android:icon="@drawable/ic_launcher"
+                  android:exported="true"/>
 
         <service android:name=".SmartAhoyExtensionService" />
 
