@@ -34,23 +34,6 @@
                 <!-- Notification intents -->
                 <action android:name="com.sonyericsson.extras.liveware.aef.notification.VIEW_EVENT_DETAIL" />
                 <action android:name="com.sonyericsson.extras.liveware.aef.notification.REFRESH_REQUEST" />
-
-                <!-- Widget intents -->
-                <action android:name="com.sonyericsson.extras.aef.widget.START_REFRESH_IMAGE_REQUEST" />
-                <action android:name="com.sonyericsson.extras.aef.widget.STOP_REFRESH_IMAGE_REQUEST" />
-                <action android:name="com.sonyericsson.extras.aef.widget.ONTOUCH" />
-                <action android:name="com.sonyericsson.extras.liveware.extension.util.widget.scheduled.refresh" />
-
-                <!-- Control intents -->
-                <action android:name="com.sonyericsson.extras.aef.control.START" />
-                <action android:name="com.sonyericsson.extras.aef.control.STOP" />
-                <action android:name="com.sonyericsson.extras.aef.control.PAUSE" />
-                <action android:name="com.sonyericsson.extras.aef.control.RESUME" />
-                <action android:name="com.sonyericsson.extras.aef.control.ERROR" />
-                <action android:name="com.sonyericsson.extras.aef.control.KEY_EVENT" />
-                <action android:name="com.sonyericsson.extras.aef.control.TOUCH_EVENT" />
-                <action android:name="com.sonyericsson.extras.aef.control.SWIPE_EVENT" />
-
             </intent-filter>
         </receiver>
     </application>
