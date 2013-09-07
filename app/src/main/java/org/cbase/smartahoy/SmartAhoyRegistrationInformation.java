@@ -40,7 +40,7 @@ public class SmartAhoyRegistrationInformation extends RegistrationInformation {
         String extensionIcon = ExtensionUtils.getUriString(mContext,
                 R.drawable.ic_launcher);
         String iconHostapp = ExtensionUtils.getUriString(mContext,
-                R.drawable.ic_launcher);
+                R.drawable.ic_launcher_black);
         String extensionIcon48 = ExtensionUtils.getUriString(mContext,
                 R.drawable.ic_launcher);
 
@@ -101,11 +101,11 @@ public class SmartAhoyRegistrationInformation extends RegistrationInformation {
         ContentValues sourceValues = null;
 
         String iconSource1 = ExtensionUtils.getUriString(mContext,
-                R.drawable.ic_launcher);
+                R.drawable.ic_launcher_black);
         String iconSource2 = ExtensionUtils.getUriString(mContext,
-                R.drawable.ic_launcher);
+                R.drawable.ic_launcher_black);
         String iconBw = ExtensionUtils.getUriString(mContext,
-                R.drawable.ic_launcher);
+                R.drawable.ic_launcher_black);
         String textToSpeech = "tts";
         sourceValues = new ContentValues();
         sourceValues.put(Notification.SourceColumns.ENABLED, true);
