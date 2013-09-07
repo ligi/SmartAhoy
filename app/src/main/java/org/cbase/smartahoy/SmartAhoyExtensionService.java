@@ -300,8 +300,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
         if (result) {
             SharedPreferences prefs = PreferenceManager
                     .getDefaultSharedPreferences(this);
-            boolean isActive = prefs.getBoolean("always_active",true);
-//                    getString(R.string.preference_key_is_active), false);
+            boolean isActive = prefs.getBoolean("active",true);
             if (isActive) {
                 startAddData();
             }
