@@ -140,15 +140,17 @@ public class SmartAhoyExtensionService extends ExtensionService {
         if (intent != null) {
             if (INTENT_ACTION_START.equals(intent.getAction())) {
                 Log.d(LOG_TAG, "onStart action: INTENT_ACTION_START");
-                startAddData();
+                //startAddData();
+                startBroadcastReceiver();
                 stopSelfCheck();
             } else if (INTENT_ACTION_STOP.equals(intent.getAction())) {
                 Log.d(LOG_TAG, "onStart action: INTENT_ACTION_STOP");
-                stopAddData();
+                //stopAddData();
+                stopBroadcastReceiver();
                 stopSelfCheck();
             } else if (INTENT_ACTION_ADD.equals(intent.getAction())) {
                 Log.d(LOG_TAG, "onStart action: INTENT_ACTION_ADD");
-                addData();
+                //addData();
                 stopSelfCheck();
             }
         }
@@ -163,7 +165,7 @@ public class SmartAhoyExtensionService extends ExtensionService {
      */
     @Override
     public void onDestroy() {
-        super.onDestroy();
+        //super.onDestroy();
         Log.d(LOG_TAG, "onDestroy");
     }
 
