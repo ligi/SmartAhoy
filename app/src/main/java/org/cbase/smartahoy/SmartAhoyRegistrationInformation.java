@@ -44,8 +44,8 @@ public class SmartAhoyRegistrationInformation extends RegistrationInformation {
         String extensionIcon48 = ExtensionUtils.getUriString(mContext,
                 R.drawable.ic_launcher);
 
-        String configurationText = "configuration text";
-        String extensionName = "SmartAhoy";
+        String configurationText = "";
+        String extensionName = "SmartAhoy!";
 
         ContentValues values = new ContentValues();
         values.put(Registration.ExtensionColumns.CONFIGURATION_ACTIVITY,
